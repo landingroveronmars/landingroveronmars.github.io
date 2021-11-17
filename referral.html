@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=0.41, maximum-scale=1">
+		
+		<title>FlashBOT Affiliate Program</title>
+	
+		<link rel="stylesheet" href="./assets/css/styles.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	
+		
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	</head>
+
+<body class="body" ng-app="myApp" ng-controller="myCtrl">
+	
+	<div id="main">
+		<div class="topnav">
+	
+		<div id="mySidenav" class="sidenav">
+			<ul id="menu" class="darking-menu" style="position: relative; padding:15px;display: grid;height: 150px;">
+			  <a href="javascript:void(0)" style="margin-top:0px" class="closebtn" onclick="closeNav()">&times;</a>
+			  
+			  <li style="margin-top: -18px;"><a  style="font-size: 12px;text-align: left;">Welcome to Flash<strong>Bot</strong>!</a></li>
+			  <br/><br/>
+			  <li style="place-self: center;"><a  style="font-size: 22px;" href="index.html" id="site">Home</a></li>
+			  <li style="place-self: center;"><a  style="font-size: 22px;" href="pool.html" id="site">Pool</a></li>
+			  <li style="place-self: center;"><a  style="font-size: 22px;" href="airdrop.html" id="site">Airdrop</a></li>
+			  <li style="place-self: center;"><a  style="font-size: 22px;" href="list.html" id="site">Token List</a></li>
+			  <li style="place-self: center;"><a  style="font-size: 22px;" href="referral.html" id="site">Affiliate</a></li>
+			  <br/><br/>
+	
+			  <div style="display: inline; place-self: center;"><a style="font-size: 14px;" target="_blank" href="https://github.com/flashbot-arbitrage">Github</a>
+				<a style="font-size: 14px;" target="_blank" href="https://fc21.ifca.ai/papers/158.pdf">Docs</a>
+				<a style="font-size: 14px;" target="_blank" href="https://news.google.com/search?for=flash+loan+attack">News</a>
+				<a style="font-size: 14px;" target="_blank" href="FAQ.html">FAQ</a>
+			</div>
+		  </ul>  
+		</div>
+	
+			<a href="javascript:void(0);" style="padding-top: 18px; padding-left: 0px;" class="icon" onclick="openNav()">
+				<i class="fa fa-bars"></i>
+			</a>
+
+			<a class="darking-logo" href="index.html" id="site" style="padding: 11px 0px;">
+				<img src="assets/image/logo.png" id="logo" width="30px" height="30px" style="float: none;">
+				<a  style="font-size: 20px;" href="index.html" id="site"><strong>Flash</strong>Bot<a style="font-size: 10px;margin-left: -25px;">finance</a></a>
+			</a>
+	
+			<div class="topnav-right">
+			<button class="button-info enableEthereumButton" id="info" style="margin-top: 10px;border-radius: 50px; background: #191b1f; display: inline;margin-right: 20px;"><i class="fa fa-user-circle-o"></i> <div style="display: inline;">{{toplen}}...{{endlen}}</div><img src="assets/image/metamask.png" id="logo" width="25px" height="25px" style="float: right;margin-right: 10px;"></button>
+			
+	
+			<div id="myModal" class="modal">
+				<div class="modal-content" style="width: 600px; height: 420px;">
+				  <span class="close">&times;</span>
+				  <h1 style="font-size: 20px; margin-top: 50px;padding: 25px; padding-top: 40px; padding-bottom: 10px; font-weight: 800;text-align: left;">Your Wallet</h1>
+				  <hr class="new1"/>
+				  <button style="margin: 15px 20px; width: auto; background: #191b1f;padding: 18px 10px;"><div style="font-size: 20px;">{{account.address}}</div></button>
+				 <div style="padding: 0px 20%;width: 100%;"> 
+				  <a href="{{scan}}address/{{account.address}}" style="font-size: 18px;">Check on {{idscan}}</a>
+				  <a onclick="copyRef()" style="font-size: 18px;">Copy Address</a>
+				  <a id="input" style="font-size: 0px; height: 0px;">{{account.address}}</a>
+				</div>
+			<hr class="new1" style="margin-top: 70px;" />
+			<h1 style="font-size: 20px;font-weight: 800;display: inline;float: left;padding-left: 25px;">Your Referral link</h1>
+			<a style="font-size: 15px; float: right; margin-bottom: 20px;" href="referral.html">Referral Stats</a>
+				<table class="form-table-b2" style="background-color: #191b1f;box-shadow: none;width: 80%;border-radius: 25px;margin-left: 10%;">
+					<tr>
+						<td> <a onclick="copyRef3()" style="font-size: 16px;float: left;margin-top: 4px;margin-left: 15px;color: wheat;">https://flashbot.finance/?r=<div id="refacc"></div></a>
+						<a id="input3" style="font-size: 0px; height: 0px;">https://flashbot.finance/?r=<div id="fullacc"></div></a>
+						<button onclick="copyRef3()" style="float: right;width: auto; font-size: 15px;font-weight: 700;color: black;background-color: #f7cd63; height: 22px;padding: 15px;">Copy</button>
+						</td>
+					</tr>
+				</table>
+
+				</div>
+			  </div>
+	
+			  <script>
+				function copyRef(id)
+				{
+				var r = document.createRange();
+				r.selectNode(document.getElementById("input"));
+				window.getSelection().removeAllRanges();
+				window.getSelection().addRange(r);
+				document.execCommand('copy');
+				window.getSelection().removeAllRanges();
+				return alert("Address copied successfully!");
+				}
+
+				function copyRef3(id)
+					{
+						var r = document.createRange();
+						r.selectNode(document.getElementById("input3"));
+						window.getSelection().removeAllRanges();
+						window.getSelection().addRange(r);
+						document.execCommand('copy');
+						window.getSelection().removeAllRanges();
+						return alert("Referral copied successfully!");
+					}
+	
+				var modal2 = document.getElementById("myModal");
+				var btn2 = document.getElementById("info");
+				var span2 = document.getElementsByClassName("close")[0];
+	
+				btn2.onclick = function() {
+					modal2.style.display = "block";
+				}
+				span2.onclick = function() {
+				modal2.style.display = "none";
+				}
+				window.onclick = function(event) {
+					if (event.target == modal2) {
+					modal2.style.display = "none";
+					}
+				}
+			  </script>
+			</div>
+			
+		</div>
+	</div>
+	<div class="space10"></div>
+	
+	<h1 style="text-shadow: 0 0 25px #9340ff; display: inline; font-size: 35px;"><strong>Referral</strong></h1><h1 style="font-size: 35px; display: inline;"> Multilevel</h1>  </br>
+	<h1 style="text-shadow: 0 0 25px #9340ff; font-size: 18px;"><strong>is back motherfucker!</strong></h1>
+
+	<table class="form-table-b1" style="display: inline;">
+
+		<tr>
+			<td style="width: 600px;">
+				
+				<tr style="display: ruby;">
+					<td>
+						<table class="form-table-b2" style="margin:0px 0px 20px 0px; background-color: #191b1f;box-shadow: none;width: 100%;padding: 20px 0px;border-radius: 25px;">
+							<tr>
+								<td> <a onclick="copyRef2()" style="font-size: 22px;float: left;margin-top: 4px;margin-left: 15px;color: wheat;">https://flashbot.finance/?r=<div id="refacc"></div></a>
+								<a id="input2" style="font-size: 0px; height: 0px;">https://flashbot.finance/?r=<div id="fullacc"></div></a>
+								<button onclick="copyRef2()" style="float: right;width: 50px; font-size: 15px;font-weight: 500;color: black;background-color: #f7cd63; height: 20px;padding: 15px; margin-right: 20px; margin-left: -100px;margin-top: -15px;">Copy</button>
+					
+								</td>
+							</tr>
+						</table>
+						
+						<p style="padding:17px;padding-top: 5px;font-size: 13px;text-align: center;">Multilevel is now Alive! Start earn easy money by sharing your Referral Link!</p>
+
+						</td>
+					<td>
+						</td>
+				</tr>
+				
+				<script>
+					function copyRef2(id)
+					{
+						var r = document.createRange();
+						r.selectNode(document.getElementById("input2"));
+						window.getSelection().removeAllRanges();
+						window.getSelection().addRange(r);
+						document.execCommand('copy');
+						window.getSelection().removeAllRanges();
+						return alert("Referral copied successfully!");
+					}
+				  </script>
+
+			</td>
+		</tr>
+		
+	</table>
+	
+	
+	<table class="form2-table" style="background-color: transparent;">
+		<tr>
+			<td style="vertical-align: top;">
+				<table class="form-table-b2" style="margin-bottom: 0px; background-color: #191b1f;border-radius: 25px; padding: 20px;">
+					<tr>
+						<td>
+							<tr>
+								<td style="width: 350px;">
+									<p style="font-size: 24px; margin: 0px; text-align: left;font-weight: 500;">Your Earnings</p>
+								</td>
+							</tr>
+
+							<div class="space10"></div>
+							<tr>
+								<td>
+									<p style="text-align: left; font-size: 14px;">To Earn:</p>
+									<p style="text-align: left; font-size: 20px; font-weight: 600;">0.000000 BNB</p>
+									<p style="text-align: left; font-size: 15px; line-height: 0; padding-top: 5px;">$ 0.000</p>
+								</td>
+								<td>
+									<button style="width: 80px; margin-top: 12px; margin-left: 15px; padding: 10px 0px; font-size: 15px;cursor: default;font-weight: 500;color: black;background: #f7cd63;" disabled>Claim</button>
+								</td>
+							</tr>
+
+							<tr>
+								<td>
+									<p style="text-align: left; font-size: 14px; line-height: 1;">Already Claimed:</p>
+									<p style="text-align: left; font-size: 20px; font-weight: 600;">0.000000 BNB</p>
+									<p style="text-align: left; font-size: 15px; line-height: 0; padding-top: 5px;">$ 0.000</p>
+								</td>
+								<td>
+									<div id="info5">
+										<button style="width: 80px; margin-top: 12px; margin-left: 15px; padding: 10px 0px; font-size: 15px;font-weight: 500;">Hystory</button>
+									</div>
+									<div id="myModal5" class="modal">
+										<div class="modal-content" style="border-radius: 25px;margin-top: 100px;width: 600px;background-color: #191b1f;height: 350px;"> <span class="close5" style="padding-right: 25px;padding-top: 25px;float: right;font-size: 30px;">&times;</span>
+											<div style="padding: 0 15px;">
+												<br/><a style="float:left;font-size: 21px;font-weight: 500;color: white;">Hystory</a>
+												<br/>
+												<br/>
+												<hr style="margin-left: -15px ;width: 598px;">
+												<div class="accordion-title">
+													<p style="display: inline-block; width: 22%; font-size: 14px;">Date:</p>
+													<p style="display: inline-block; width: 40%; font-size: 14px; text-align: center;">Action:</p>
+													<p style="display: inline-block; width: 22%; font-size: 14px; text-align: center;padding-bottom: 10px;">Amount:</p>
+													<hr style="margin-left: -15px ;width: 598px;">
+												</div>
+												<hr style="margin-left: -15px ;width: 598px;margin-top: 120px;">
+												<div class="accordion-title">
+													<p style="display: inline-block; width: 45%; font-size: 16px; text-align: center;font-weight: 500;">Total to Claim</p>
+													<p style="display: inline-block; width: 45%; font-size: 16px; text-align: center;font-weight: 500;margin-bottom: 25px;">Total Withdraw</p>
+													<hr style="margin-left: -15px ;width: 598px;">
+												</div>
+												<div class="accordion-title">
+													<p style="display: inline-block; width: 45%; font-size: 16px; text-align: center;font-weight: 500;">0.0000 BNB</p>
+													<p style="display: inline-block; width: 45%; font-size: 16px; text-align: center;font-weight: 500;">0.0000 BNB</p>
+												</div>
+											</div>
+										</div>
+									</div>
+									<script>
+										var modal5 = document.getElementById("myModal5");
+										                                              var btn5 = document.getElementById("info5");
+										                                              var span5 = document.getElementsByClassName("close5")[0];
+										                                  
+										                                              btn5.onclick = function() {
+										                                                  modal5.style.display = "block";
+										                                              }
+										                                              span5.onclick = function() {
+										                                              modal5.style.display = "none";
+										                                              }
+										                                              window.onclick = function(event) {
+										                                                  if (event.target == modal5) {
+										                                                  modal5.style.display = "none";
+										                                                  }
+										                                              }
+									</script>
+								</td>
+							</tr>
+							<div class="space10"></div>
+						</td>
+					</tr>
+				</table>
+				
+			</td>
+
+			<td style="vertical-align: baseline; padding-left: 35px;">
+				
+				<table class="form-table-b1">
+					<tr>
+						<td style="width: 100%;">
+							<p style="padding-bottom: 0px;font-size: 32px; margin: 0px; text-align: left;font-weight: 500;">How it works</p>
+							<p style="padding-top: 5px;font-size: 13px; margin: 0px; text-align: left;">When performing a transaction a data with the referral link will be entered in the TX, the contract will read this data and will send a part of the TX to the reference wallet. When the code will be ready we will publish the git and we will integrate the function on our verified contracts.</p>
+						
+							<div class="space10"></div>
+							<p style="padding-top: 5px;font-size: 13px; text-align: left;">*% of total fee payed</p>
+							<div class="space10"></div>
+
+							<tr>
+								<td style="float: left;text-align: initial;line-height: 0;">
+									<p style="text-align: left; font-size: 16px; line-height: 0;padding-bottom: 10px;">1 LVL - 60%</p>
+									<p style="text-align: left; font-size: 16px; line-height: 0;padding-bottom: 10px;">2 LVL - 20%</p>
+									<p style="text-align: left; font-size: 16px; line-height: 0;padding-bottom: 10px;">3 LVL - 5%</p>
+
+									</br>
+									<p style="margin-top: 10px;text-align: left; font-size: 16px; line-height: 0;padding-bottom: 20px;">Invited users: <strong>0</strong></p>
+									<p style="text-align: left; font-size: 16px; line-height: 0;">Total Earnings: <strong>0 BNB</strong></p>
+								</td>
+							</tr>
+						
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+
+	<div class="space10"></div>
+
+	<ul class="darking-menu">
+		<div class="tooltip" style="border-bottom: 0px dotted #000;position: relative;">
+			<a class="darking-menu" style="font-size: 12px;display: contents;" ><p>WebSocket: <a style="color: rgb(85, 170, 0);font-size: 12px;display: contents;"><i class="fa fa-circle"></i> Connected</a><span class="tooltiptext">Our WebSocket is correctly connected to the Server.</span></p></a>
+		</div></br>
+		<a class="darking-menu" style="font-size: 12px;" ><p>© FlashBot 2021</p></a>
+	</ul>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.3.5/web3.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js" integrity="sha256-/H4YS+7aYb9kJ5OKhFYPUjSJdrtV6AeyJOtTkw6X72o=" crossorigin="anonymous"></script>
+	<script src="./assets/js/script.min.js?v=4"></script>
+	<script src="./assets/js/addr.min.js?v=2"></script>
+	<script src="./assets/js/chain.min.js?v=2"></script>
+</body>
+
+</html>
